@@ -1,13 +1,13 @@
 """
-Facebook Timestamp Parser Module
+Timestamp Parser Module
 
-A comprehensive timestamp parser extracted from Facebook scraper that can handle
-various Facebook timestamp formats and convert them to days ago.
+A comprehensive timestamp parser extracted from Facebook, Instagram, Twitter or other website scrapers that can handle
+various timestamp formats embedded in images, posts or in comments and convert them to days ago for classification purpose or any other usage scenario.
 
 Usage:
-    from timestamp_parser import FacebookTimestampParser
+    from timestamp_parser import TimestampParser
     
-    parser = FacebookTimestampParser(verbose=True)
+    parser = TimestampParser(verbose=True)
     days_ago = parser.parse_timestamp_to_days("2 hours ago")
     print(f"Days ago: {days_ago}")  # Output: 0
     
@@ -21,9 +21,6 @@ from datetime import datetime
 
 class TimestampParser:
     """
-    A comprehensive parser for Facebook timestamps that converts various
-    timestamp formats into days ago from current date.
-    
     Handles formats like:
     - "27 March 2017"
     - "13 Feb 10:37" (current year assumed)
@@ -32,7 +29,7 @@ class TimestampParser:
     - "Yesterday at 3:45 PM"
     - "Just now"
     - "3d", "2w" (short forms)
-    - And many more Facebook timestamp variations
+    - And many more timestamp variations
     """
     
     def __init__(self, verbose=False):
@@ -59,7 +56,7 @@ class TimestampParser:
     
     def parse_timestamp_to_days(self, timestamp):
         """
-        Parse Facebook timestamps into days ago.
+        Parse timestamps into days ago.
         
         Args:
             timestamp (str): The timestamp string to parse
@@ -184,7 +181,7 @@ class TimestampParser:
             except ValueError:
                 continue
 
-        # Handle special Facebook formats that might have been missed
+        # Handle special formats that might have been missed
         special_patterns = [
             # "2 days ago", "3 weeks ago", etc. that might have slipped through
             (r"(\d+)\s+days?\s+ago", lambda x: int(x)),
@@ -340,7 +337,7 @@ if __name__ == "__main__":
         "invalid timestamp"
     ]
     
-    print("Testing Facebook Timestamp Parser")
+    print("Testing Timestamp Parser")
     print("=" * 50)
     
     # Test with verbose mode
