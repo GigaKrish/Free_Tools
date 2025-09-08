@@ -1,6 +1,6 @@
 # TimeStamp Parser Module
 
-A comprehensive timestamp parser extracted from Facebook, Instagram, Twitter or other website scrapers that can handle
+A comprehensive timestamp parser for extracted timestamps from Facebook, Instagram, Twitter or other website scrapers that can handle
 various timestamp formats embedded in images, posts or in comments and convert them to days ago for classification purpose or any other usage scenario.
 
 ### Usage:
@@ -15,5 +15,5 @@ various timestamp formats embedded in images, posts or in comments and convert t
     print(f"Days ago: {days_ago}")  # Output: actual days since March 27, 2017
 ```
 
-Script is modular thus easy to import and debug. 
-Just make sure file exists in same folder to use it.
+Completely modular script for easy debugging. 
+Just make sure file exists in same folder before using it.
